@@ -1,0 +1,53 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: travelpilot-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: travelpilot
+    ports:
+      - "${DB_PORT:-5434}:5432"
+    volumes:
+      - travelpilot_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d travelpilot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: travelpilot-backend
+    restart: unless-stopped
+    ports:
+      - "${BACKEND_PORT:-8002}:8000"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://postgres:postgres@db:5432/travelpilot
+      - JWT_SECRET=dev-secret-change-in-production
+      - CORS_ORIGINS=http://localhost:5175,http://127.0.0.1:5175,http://localhost:5173,http://127.0.0.1:5173
+      - LLM_API_KEY=
+      - LLM_BASE_URL=
+      - LLM_MODEL=
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: travelpilot-frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-5175}:5173"
+    environment:
+      - VITE_API_URL=http://localhost:${BACKEND_PORT:-8002}
+    depends_on:
+      - backend
+
+volumes:
+  travelpilot_pgdata:

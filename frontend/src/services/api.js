@@ -1,0 +1,18 @@
+import axios from 'axios'
+export const api=axios.create({baseURL:import.meta.env.VITE_API_URL||'http://localhost:8000',timeout:10000})
+api.interceptors.request.use(config=>{const token=localStorage.getItem('tp_token');if(token)config.headers.Authorization=`Bearer ${token}`;return config})
+const get=async p=>{const {data}=await api.get(p);return data}; const post=async(p,b)=>{const {data}=await api.post(p,b);return data}
+export const checkBackend=()=>get('/health')
+export const signup=p=>post('/auth/signup',p)
+export const login=p=>post('/auth/login',p)
+export const demoLogin=()=>post('/auth/demo-login',{})
+export const getMe=()=>get('/auth/me')
+export const generateItinerary=p=>post('/itinerary/generate',p)
+export const getDemoItinerary=()=>get('/itinerary/demo')
+export const getDemoGraph=()=>get('/itinerary/demo/graph')
+export const triggerDisruption=p=>post('/disruption/trigger',p)
+export const getRecoveryOptions=(id,delay=300)=>get(`/recovery/options/${id}?delay_minutes=${delay}`)
+export const applyRecovery=p=>post('/recovery/apply',p)
+export const askAI=(q,graph)=>post('/qa',{question:q,trip:graph||null})
+export const getWeather=()=>get('/weather')
+export const getBudget=(budget=50000,delay=300)=>get(`/budget?budget=${budget}&delay_minutes=${delay}`)

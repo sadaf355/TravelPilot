@@ -1,0 +1,421 @@
+{
+  "trip_id": "demo_001",
+  "destination": "Ladakh",
+  "start_date": "2026-06-12",
+  "end_date": "2026-06-17",
+  "budget": 50000,
+  "interests": [
+    "Adventure",
+    "Nature",
+    "Photography"
+  ],
+  "traveler": "Priya",
+  "days": [
+    {
+      "day": 1,
+      "title": "Arrival in Leh",
+      "date": "12 June 2026",
+      "items": [
+        {
+          "id": "flight_1",
+          "type": "flight",
+          "title": "Delhi → Leh",
+          "start_time": "06:20",
+          "end_time": "08:00",
+          "location": "Leh Airport",
+          "cost": 8500,
+          "status": "ok",
+          "day": 1,
+          "description": "Morning flight from Delhi to Leh."
+        },
+        {
+          "id": "transfer_1",
+          "type": "transfer",
+          "title": "Airport Transfer",
+          "start_time": "08:45",
+          "end_time": "09:30",
+          "location": "Leh Airport → Hotel",
+          "cost": 1200,
+          "status": "ok",
+          "day": 1,
+          "description": "Private airport transfer to the hotel.",
+          "buffer_time": 45
+        },
+        {
+          "id": "stay_1",
+          "type": "stay",
+          "title": "Hotel Check-in",
+          "start_time": "12:00",
+          "end_time": "12:30",
+          "location": "The Grand Dragon, Leh",
+          "cost": 4500,
+          "status": "ok",
+          "day": 1,
+          "description": "Check-in and rest at the hotel.",
+          "buffer_time": 150
+        },
+        {
+          "id": "activity_1",
+          "type": "activity",
+          "title": "Leh Market",
+          "start_time": "17:00",
+          "end_time": "19:00",
+          "location": "Leh Main Bazaar",
+          "cost": 0,
+          "status": "ok",
+          "day": 1,
+          "description": "Easy first-day walk through Leh Market.",
+          "buffer_time": 270,
+          "tags": [
+            "Culture"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Adventure"
+              ],
+              "title": "Leh Bazaar Cycling Tour",
+              "location": "Leh Main Bazaar",
+              "cost": 600,
+              "description": "Guided cycling loop through Leh's old town lanes and bazaar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Sham Valley",
+      "date": "13 June 2026",
+      "items": [
+        {
+          "id": "transfer_2",
+          "type": "transfer",
+          "title": "Sham Valley Drive",
+          "start_time": "08:00",
+          "end_time": "10:00",
+          "location": "Leh → Sham Valley",
+          "cost": 2500,
+          "status": "ok",
+          "day": 2
+        },
+        {
+          "id": "activity_2",
+          "type": "activity",
+          "title": "Magnetic Hill & Gurudwara",
+          "start_time": "10:30",
+          "end_time": "13:00",
+          "location": "Sham Valley",
+          "cost": 800,
+          "status": "ok",
+          "day": 2,
+          "buffer_time": 30,
+          "tags": [
+            "Adventure",
+            "Culture"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Food"
+              ],
+              "title": "Leh Valley Food Trail",
+              "location": "Leh Valley",
+              "cost": 900,
+              "description": "A guided tasting trail through Ladakhi kitchens on the way to Magnetic Hill."
+            }
+          ]
+        },
+        {
+          "id": "activity_3",
+          "type": "activity",
+          "title": "Alchi Monastery",
+          "start_time": "15:00",
+          "end_time": "17:00",
+          "location": "Alchi",
+          "cost": 500,
+          "status": "ok",
+          "day": 2,
+          "buffer_time": 120,
+          "tags": [
+            "Culture"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Adventure"
+              ],
+              "title": "Sham Valley Rock Climbing",
+              "location": "Sham Valley",
+              "cost": 1500,
+              "description": "A short guided climb over Sham Valley's sandstone cliffs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Nubra Valley",
+      "date": "14 June 2026",
+      "items": [
+        {
+          "id": "transfer_3",
+          "type": "transfer",
+          "title": "Khardung La Drive",
+          "start_time": "07:00",
+          "end_time": "11:00",
+          "location": "Leh → Nubra",
+          "cost": 4500,
+          "status": "ok",
+          "day": 3
+        },
+        {
+          "id": "activity_4",
+          "type": "activity",
+          "title": "Diskit Monastery",
+          "start_time": "11:30",
+          "end_time": "13:00",
+          "location": "Diskit",
+          "cost": 300,
+          "status": "ok",
+          "day": 3,
+          "buffer_time": 30,
+          "tags": [
+            "Culture",
+            "Nature"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Relaxed"
+              ],
+              "title": "Nubra Valley Riverside Picnic",
+              "location": "Nubra Valley",
+              "cost": 500,
+              "description": "An unhurried picnic by the Shyok river with mountain views."
+            }
+          ]
+        },
+        {
+          "id": "stay_2",
+          "type": "stay",
+          "title": "Nubra Camp Check-in",
+          "start_time": "15:00",
+          "end_time": "15:30",
+          "location": "Hunder, Nubra",
+          "cost": 5500,
+          "status": "ok",
+          "day": 3,
+          "buffer_time": 120
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Nubra to Pangong",
+      "date": "15 June 2026",
+      "items": [
+        {
+          "id": "transfer_4",
+          "type": "transfer",
+          "title": "Nubra → Pangong Transfer",
+          "start_time": "07:30",
+          "end_time": "12:00",
+          "location": "Nubra → Pangong",
+          "cost": 5000,
+          "status": "ok",
+          "day": 4
+        },
+        {
+          "id": "activity_5",
+          "type": "activity",
+          "title": "Pangong Lake",
+          "start_time": "13:00",
+          "end_time": "17:00",
+          "location": "Pangong Lake",
+          "cost": 1000,
+          "status": "ok",
+          "day": 4,
+          "buffer_time": 60,
+          "tags": [
+            "Nature",
+            "Photography"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Adventure"
+              ],
+              "title": "Pangong Lake Kayaking",
+              "location": "Pangong Lake",
+              "cost": 1800,
+              "description": "A guided kayak session on Pangong's still, high-altitude waters."
+            }
+          ]
+        },
+        {
+          "id": "stay_3",
+          "type": "stay",
+          "title": "Pangong Camp",
+          "start_time": "17:30",
+          "end_time": "18:00",
+          "location": "Spangmik",
+          "cost": 5000,
+          "status": "ok",
+          "day": 4,
+          "buffer_time": 30
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Pangong to Leh",
+      "date": "16 June 2026",
+      "items": [
+        {
+          "id": "transfer_5",
+          "type": "transfer",
+          "title": "Pangong → Leh Drive",
+          "start_time": "08:00",
+          "end_time": "14:00",
+          "location": "Pangong → Leh",
+          "cost": 5500,
+          "status": "ok",
+          "day": 5
+        },
+        {
+          "id": "activity_6",
+          "type": "activity",
+          "title": "Shanti Stupa Sunset",
+          "start_time": "17:00",
+          "end_time": "19:00",
+          "location": "Shanti Stupa",
+          "cost": 300,
+          "status": "ok",
+          "day": 5,
+          "buffer_time": 180,
+          "tags": [
+            "Photography",
+            "Relaxed"
+          ],
+          "variants": [
+            {
+              "tags": [
+                "Food"
+              ],
+              "title": "Leh Rooftop Dinner Experience",
+              "location": "Leh",
+              "cost": 1100,
+              "description": "A rooftop farewell dinner overlooking Leh as the sun sets."
+            }
+          ]
+        },
+        {
+          "id": "stay_4",
+          "type": "stay",
+          "title": "Leh Hotel",
+          "start_time": "19:30",
+          "end_time": "20:00",
+          "location": "Leh",
+          "cost": 4500,
+          "status": "ok",
+          "day": 5,
+          "buffer_time": 30
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Departure",
+      "date": "17 June 2026",
+      "items": [
+        {
+          "id": "transfer_6",
+          "type": "transfer",
+          "title": "Hotel → Airport",
+          "start_time": "05:00",
+          "end_time": "05:45",
+          "location": "Leh → Airport",
+          "cost": 1200,
+          "status": "ok",
+          "day": 6
+        },
+        {
+          "id": "flight_2",
+          "type": "flight",
+          "title": "Leh → Delhi",
+          "start_time": "07:00",
+          "end_time": "08:30",
+          "location": "Leh Airport",
+          "cost": 8500,
+          "status": "ok",
+          "day": 6,
+          "buffer_time": 75
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "flight_1",
+      "target": "transfer_1",
+      "buffer_time": 45
+    },
+    {
+      "source": "transfer_1",
+      "target": "stay_1",
+      "buffer_time": 150
+    },
+    {
+      "source": "stay_1",
+      "target": "activity_1",
+      "buffer_time": 270
+    },
+    {
+      "source": "transfer_2",
+      "target": "activity_2",
+      "buffer_time": 30
+    },
+    {
+      "source": "activity_2",
+      "target": "activity_3",
+      "buffer_time": 120
+    },
+    {
+      "source": "transfer_3",
+      "target": "activity_4",
+      "buffer_time": 30
+    },
+    {
+      "source": "activity_4",
+      "target": "stay_2",
+      "buffer_time": 120
+    },
+    {
+      "source": "transfer_4",
+      "target": "activity_5",
+      "buffer_time": 60
+    },
+    {
+      "source": "activity_5",
+      "target": "stay_3",
+      "buffer_time": 30
+    },
+    {
+      "source": "transfer_5",
+      "target": "activity_6",
+      "buffer_time": 180
+    },
+    {
+      "source": "activity_6",
+      "target": "stay_4",
+      "buffer_time": 30
+    },
+    {
+      "source": "transfer_6",
+      "target": "flight_2",
+      "buffer_time": 75
+    }
+  ]
+}
