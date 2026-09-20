@@ -14,9 +14,8 @@ services:
         sync: false
       - key: JWT_SECRET
         generateValue: true
-      # Set to your Vercel frontend URL after deploying, e.g. https://travelpilot.vercel.app
       - key: CORS_ORIGINS
-        sync: false
+        value: "https://travel-pilot-one.vercel.app"
       # Optional — set to enable live LLM responses (leave blank for demo/offline mode)
       - key: LLM_API_KEY
         sync: false
