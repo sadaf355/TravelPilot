@@ -11,7 +11,13 @@ logger = logging.getLogger("travelpilot.startup")
 # Extra allowed origins beyond localhost dev, comma-separated
 # (e.g. CORS_ORIGINS="https://travelpilot.example.com,https://staging.example.com").
 _extra_origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "").split(",") if o.strip()]
-_allowed_origins = list(dict.fromkeys(["http://localhost:5173", "http://127.0.0.1:5173", *_extra_origins]))
+_allowed_origins = list(dict.fromkeys([
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5175",
+    "https://travel-pilot-one.vercel.app",  # production frontend
+    *_extra_origins,
+]))
 logger.info("CORS allowed origins: %s", _allowed_origins)
 
 app=FastAPI(title='TravelPilot API',version='1.0.0',description='AI travel planning, dependency intelligence and disruption recovery')
